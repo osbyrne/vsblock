@@ -1,0 +1,71 @@
+html, body {
+    font-family: Inter;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;}
+
+.container {padding: 4%;}
+
+.thread {
+    font-size: 6vh;
+}
+
+header {background-color: beige;}
+
+form:hover {
+    color : linear-gradient(
+            146deg, 
+            rgba(29,13,212,0.49095236157614086) 19%,
+            rgba(195,255,214,0.4242856949094742) 46%,
+            rgba(255,0,236,0.5322222028459822) 100%);
+    transition : all 1s;}
+
+footer {
+    background-color: beige;
+    margin-top: auto;}
+
+.lead {
+    font-size: 1.5rem;
+    font-weight: 300;}
+
+.btn {
+    padding: 1.25rem;
+    border: 0;
+    border-radius: 3px;
+    background-color: beige;
+    color: black;
+    cursor: pointer;}
+
+canvas {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin: 1rem auto;
+    width: 500px;
+    height: 300px;}
+
+footer:hover #id{
+    background: linear-gradient(
+        146deg, 
+        rgba(29,13,212,0.49095236157614086) 19%,
+        rgba(195,255,214,0.4242856949094742) 46%,
+        rgba(255,0,236,0.5322222028459822) 100%);}
+
+article {flex: 1;}
+
+.row {display: flex;}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;}
+
+.column {
+    float: left;
+    flex: 50%;}
+
+.left {width: 25%;}
+.right {width: 75%;}

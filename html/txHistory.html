@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" class="theme-light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>vs block</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Inter"
+    />
+    <link rel="stylesheet" href="../css/styles.css" type="text/css" />
+    <link rel="stylesheet" href="../css/dynamicGradient.css" type="text/css" />
+    <link rel="stylesheet" href="../css/button.css" type="text/css" />
+    <link rel="stylesheet" href="../css/table.css" type="text/css" />
+    <link rel="stylesheet" href="../css/form.css" type="text/css" />
+    <link rel="icon" href="../img/logo.png" />
+    <script type="text/javascript" src="../js/txForm.js"></script>
+    <script src="../js/newElem.js"></script>
+    <script src="../js/txHistory.js"></script>
+    <script src="../json/tx.json"></script>
+  </head>
+  <body>
+    <script>
+      header();
+    </script>
+
+    <main class="box">
+      <div class="container">
+        <a>Number of transactions: </a>
+        <input type="text" id="rowCount" readonly />
+        <br /><br /><br /><br />
+
+        <table id="myTable" class="table">
+          <tr>
+            <th>Sender</th>
+            <th>Destination</th>
+            <th>Amount</th>
+          </tr>
+        </table>
+        <br /><br /><br /><br />
+        <a class="button" href="user.html">Add a transaction</a>
+
+        <script>
+          reciveTx(getTxfromURL(), "myTable");
+          addDataToTable("myTable");
+        </script>
+
+        <script>
+          footer();
+        </script>
+      </div>
+    </main>
+  </body>
+</html>

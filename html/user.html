@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" class="theme-light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>vs block</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Inter"
+    />
+    <link rel="stylesheet" href="../css/styles.css" type="text/css" />
+    <link rel="stylesheet" href="../css/dynamicGradient.css" type="text/css" />
+    <link rel="stylesheet" href="../css/button.css" type="text/css" />
+    <link rel="stylesheet" href="../css/table.css" type="text/css" />
+    <link rel="stylesheet" href="../css/form.css" type="text/css" />
+    <link rel="icon" href="../img/logo.png" />
+    <script type="text/javascript" src="../js/txForm.js"></script>
+    <script src="../js/newElem.js"></script>
+  </head>
+  <body>
+    <script>
+      header();
+    </script>
+    <div class="container">
+      <h1>Starting with you</h1>
+      <p>You're going to craft and send a transaction (denoted 'Tx')</p>
+      <div class="row">
+        <div class="column">
+          <img src="../img/user.png" alt="user" width="100px" />
+        </div>
+
+        <div class="column">
+          <form
+            method="post"
+            name="create tx"
+            action="#"
+            class="box"
+            id="create tx"
+            onsubmit="return false"
+          >
+            <fieldset>
+              <legend>Craft your own Tx</legend>
+              <div>
+                <label>Sender </label>
+                <select
+                  id="senderAddressSelect"
+                  name="sender address"
+                  onclick="
+                  setAmountCap('txSendAmount', 'senderAddressSelect');
+                  enforceCap('txSendAmount');
+                  "
+                >
+                  <script>
+                    fillSelector("senderAddressSelect");
+                  </script>
+                </select>
+
+                <br /><br />
+                <label>Destination </label>
+                <select
+                  id="destinationAddressSelect"
+                  name="destination address"
+                >
+                  <script>
+                    fillSelector("destinationAddressSelect");
+                  </script>
+                </select>
+
+                <br /><br />
+                <label>Amount </label>
+                <input
+                  type="number"
+                  id="txSendAmount"
+                  name="amount"
+                  min="0"
+                  max="0"
+                  oninput="
+                  "
+                />
+                <script>
+                  setAmountCap("txSendAmount", "senderAddressSelect");
+                </script>
+
+                <br /><br />
+
+                <button id="submit" type="button">Submit</button>
+
+                <script type="text/javascript">
+                  document.getElementById("submit").onclick = function () {
+                    const tx = craftTx();
+                    console.log(tx);
+                    location.href = craftURL("txHistory.html", tx);
+                  };
+                </script>
+                <a href="sketchpad.html">
+                  <button id="sign" type="button">Sign</button>
+                </a>
+              </div>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      footer();
+    </script>
+  </body>
+</html>
